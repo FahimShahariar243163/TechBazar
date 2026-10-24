@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechBazar BD | Smart Electronics Store</title>
+<meta name="description" content="Shop phones, laptops, headphones and smart gadgets at TechBazar BD.">
+<meta name="theme-color" content="#0e7490">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHBvbHlnb24gcG9pbnRzPSIzMiw2IDU0LjUsMTkgNTQuNSw0NSAzMiw1OCA5LjUsNDUgOS41LDE5IiBmaWxsPSIjMDZiNmQ0IiBzdHJva2U9IiMwNmI2ZDQiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTIpIj48cGF0aCBkPSJNMjUgMjdDMjUgMTggMzkgMTggMzkgMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjIyLDI1IDQyLDI1IDQ1LDQ3IDE5LDQ3IiBmaWxsPSIjZmZmIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjI1IiBjeT0iMjguNSIgcj0iMS42IiBmaWxsPSIjMDg5MWIyIi8+PGNpcmNsZSBjeD0iMzkiIGN5PSIyOC41IiByPSIxLjYiIGZpbGw9IiMwODkxYjIiLz48cG9seWdvbiBwb2ludHM9IjM1LjUgMzEuNSAyOCA0MC41IDMyLjMgNDAuNSAzMC44IDQ3IDM3LjggMzcuNSAzMy4zIDM3LjUiIGZpbGw9IiMwZTc0OTAiLz48L2c+PC9zdmc+Cg==">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+// Old indigo/purple classes now render as cyan/sky | ইন্ডিগো/পার্পল ক্লাস এখন সায়ান/স্কাই
+tailwind.config={darkMode:"class",theme:{extend:{colors:{
+ indigo:{50:"#ecfeff",100:"#cffafe",200:"#a5f3fc",300:"#67e8f9",400:"#22d3ee",500:"#06b6d4",600:"#0891b2",700:"#0e7490",800:"#155e75",900:"#164e63",950:"#083344"},
+ purple:{50:"#f0f9ff",100:"#e0f2fe",200:"#bae6fd",300:"#7dd3fc",400:"#38bdf8",500:"#0ea5e9",600:"#0284c7",700:"#0369a1",800:"#075985",900:"#0c4a6e",950:"#082f49"}
+}}}};
+</script>
+<style type="text/tailwindcss">
+.box{@apply bg-white dark:bg-slate-800 rounded-2xl shadow p-4}
+.btn{@apply bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-3 py-1.5 text-sm transition disabled:opacity-40}
+.inp{@apply bg-white border rounded-lg px-3 py-2 w-full text-slate-800}
+.card{@apply transition duration-200 hover:-translate-y-1 hover:shadow-xl}
+.tag{@apply text-white text-xs font-bold rounded px-2 py-0.5}
+</style>
+<style>
+@media print{.noprint{display:none!important}}
+.brand-lockup{transition:transform .2s ease;max-width:100%}.brand-lockup:hover{transform:translateY(-1px) scale(1.02)}
+.brand-mark{overflow:visible;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(34,211,238,.6))}
+.brand-ring{transform-box:fill-box;transform-origin:center;animation:ringPulse 2.8s ease-out infinite}
+.brand-spark{transform-box:fill-box;transform-origin:center;animation:twinkle 2.2s ease-in-out infinite}
+@keyframes ringPulse{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.35)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1) rotate(0)}50%{opacity:.5;transform:scale(.6) rotate(45deg)}}
+.brand-name{color:#fff;text-shadow:0 2px 12px rgba(8,51,68,.35)}
+.brand-name .grad{background:linear-gradient(100deg,#a5f3fc,#22d3ee 55%,#fde047);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-bd{display:inline-block;margin-left:.35rem;padding:.12rem .4rem;border-radius:.45rem;background:#fde047;color:#083344;font-size:.55em;letter-spacing:.08em;vertical-align:middle}
+.login-shell{background:linear-gradient(135deg,rgba(15,23,42,.96),rgba(49,46,129,.88)),url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85') center/cover;border-radius:1.5rem;overflow:hidden}
+.login-panel{background:rgba(255,255,255,.96);backdrop-filter:blur(18px)}.dark .login-panel{background:rgba(15,23,42,.94)}
+:root{--brand-a:#4f46e5;--brand-b:#db2777;--brand-c:#06b6d4}
+body{background-image:radial-gradient(ellipse at 10% 0%,rgba(99,102,241,.10),transparent 35%),radial-gradient(ellipse at 95% 20%,rgba(236,72,153,.08),transparent 30%)}
+.dark body{background-image:radial-gradient(ellipse at 10% 0%,rgba(99,102,241,.16),transparent 35%),radial-gradient(ellipse at 95% 20%,rgba(14,165,233,.08),transparent 30%)}
+header{background:linear-gradient(110deg,#312e81 0%,#4f46e5 48%,#7c3aed 100%)!important;backdrop-filter:blur(14px)}
+.gradient-heading{display:inline-block;background:linear-gradient(100deg,#fb7185 0%,#f59e0b 18%,#a3e635 38%,#22d3ee 58%,#818cf8 78%,#e879f9 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:headingFlow 8s linear infinite}
+@keyframes headingFlow{to{background-position:220% center}}
+.box{border:1px solid rgba(148,163,184,.17);box-shadow:0 8px 24px rgba(15,23,42,.055);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.dark .box{border-color:rgba(148,163,184,.13);box-shadow:0 10px 28px rgba(0,0,0,.14)}
+.card:hover{box-shadow:0 16px 36px rgba(79,70,229,.14)!important;border-color:rgba(129,140,248,.42)}
+.btn{background:linear-gradient(100deg,#4f46e5,#7c3aed);box-shadow:0 5px 14px rgba(79,70,229,.16)}
+.btn:hover{filter:brightness(1.08)}
+#banner{touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;overflow:hidden;background-size:cover;background-position:center;position:relative;min-height:300px;border-radius:1.35rem;background-color:#111827;isolation:isolate;box-shadow:0 20px 50px rgba(15,23,42,.2);transition:background-position .6s ease}
+#banner:active{cursor:grabbing}
+.banner-enter{animation:bannerReveal .65s cubic-bezier(.2,.75,.25,1) both}
+@keyframes bannerReveal{from{opacity:.45;transform:translateY(5px) scale(.995);filter:saturate(.7)}to{opacity:1;transform:translateY(0) scale(1);filter:saturate(1)}}
+.banner-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,6,23,.92) 0%,rgba(15,23,42,.68) 48%,rgba(15,23,42,.12) 100%),linear-gradient(0deg,rgba(2,6,23,.38),transparent 60%);pointer-events:none}
+.banner-content{position:relative;z-index:1;pointer-events:none;min-height:300px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.banner-content button{pointer-events:auto;transition:transform .2s ease,box-shadow .2s ease}
+.banner-content button:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,255,255,.2)}
+.banner-title{max-width:720px;line-height:1.08;letter-spacing:-.035em;text-shadow:0 4px 24px rgba(0,0,0,.18)}
+.banner-progress{height:3px;position:absolute;left:0;right:0;bottom:0;z-index:3;background:rgba(255,255,255,.2);overflow:hidden}
+.banner-progress span{display:block;height:100%;width:100%;background:linear-gradient(90deg,#f472b6,#fbbf24,#22d3ee);transform-origin:left;animation:bannerProgress 5.5s linear forwards}
+@keyframes bannerProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:640px){#banner,.banner-content{min-height:260px} .banner-content{padding:1.5rem!important} .banner-shade{background:linear-gradient(90deg,rgba(2,6,23,.86),rgba(15,23,42,.48)),linear-gradient(0deg,rgba(2,6,23,.25),transparent)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors">
+<header class="noprint sticky top-0 z-40 bg-indigo-700 text-white shadow">
+  <div class="max-w-6xl mx-auto px-3 py-2 flex flex-wrap items-center gap-2">
+    <button onclick="go('home')" class="brand-lockup inline-flex items-center gap-2 text-left shrink-0" aria-label="TechBazar BD home">
+<svg class="brand-mark" viewBox="0 0 64 64" width="46" height="46" role="img" aria-label="TechBazar logo">
+ <defs>
+  <linearGradient id="tbHex" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset=".5" stop-color="#06b6d4"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
+  <linearGradient id="tbBolt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
+ </defs>
+ <polygon class="brand-ring" points="32,6 54.5,19 54.5,45 32,58 9.5,45 9.5,19" fill="none" stroke="#67e8f9" stroke-width="2"/>
+ <polygon points="32,6 54.5,19 54.5,45 32,58 9.5,45 9.5,19" fill="url(#tbHex)" stroke="url(#tbHex)" stroke-width="6" stroke-linejoin="round"/>
+ <g transform="translate(0 -2)">
+  <path d="M25 27C25 18 39 18 39 27" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="22,25 42,25 45,47 19,47" fill="#fff" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="25" cy="28.5" r="1.6" fill="#0891b2"/><circle cx="39" cy="28.5" r="1.6" fill="#0891b2"/>
+  <polygon points="35.5 31.5 28 40.5 32.3 40.5 30.8 47 37.8 37.5 33.3 37.5" fill="url(#tbBolt)"/>
+ </g>
+ <path class="brand-spark" d="M51 8l1.6 3.9L56.5 13.5l-3.9 1.6L51 19l-1.6-3.9L45.5 13.5l3.9-1.6z" fill="#fde047"/>
+</svg>
+      <span class="brand-name text-xl sm:text-2xl font-black tracking-tight">Tech<span class="grad">Bazar</span><b class="brand-bd">BD</b></span>
+    </button>
+    <input id="searchBox" oninput="onSearch(this.value)" class="inp flex-1 min-w-[130px]">
+    <button onclick="go('shop')" id="navShop" class="rounded-lg px-2 py-1.5 hover:bg-white/10"></button>
+    <button onclick="go('orders')" id="navOrders" class="rounded-lg px-2 py-1.5 hover:bg-white/10"></button>
+    <button onclick="go('login')" id="navLogin" class="rounded-lg border border-white/30 bg-white/10 px-3 py-1.5 text-sm font-bold hover:bg-white/20">Log in</button>
+    <button onclick="toggleLang()" class="rounded-lg px-2 py-1.5 hover:bg-white/10">বাং/EN</button>
+    <button onclick="toggleDark()" class="rounded-lg px-2 py-1.5 hover:bg-white/10" aria-label="Toggle dark mode" title="Toggle dark mode"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 15.2A8.5 8.5 0 0 1 8.8 3.3 8.8 8.8 0 1 0 20.8 15.2Z"/><path d="m16.5 3 .6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7Z"/></svg></button>
+    <button onclick="go('cart')" class="rounded-lg px-2 py-1.5 hover:bg-white/10 inline-flex items-center gap-1" aria-label="Shopping cart"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span id="cartCount" class="bg-amber-300 text-slate-950 rounded-full px-2 text-xs font-bold">0</span></button>
+  </div>
+</header>
+<main id="app" class="max-w-6xl mx-auto px-3 py-4"></main>
+<footer class="noprint bg-slate-800 text-slate-300 mt-8 p-6 text-center text-sm">TechBazar BD, Dhaka. Genuine Products · Free Delivery over ৳5,000 · 7-Day Return · Secure Payment</footer>
+<div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-black text-white px-4 py-2 rounded-lg opacity-0 transition-opacity z-50"></div>
+
+<script>
+// ================= DATA (ডেটা) =================
+// Makes one product object | একটি পণ্যের অবজেক্ট বানায়
+function P(id,name,brand,category,price,old,rating,reviews,stock,emoji,specs,desc){
+  return {id:id,name:name,brand:brand,category:category,price:price,old:old,rating:rating,reviews:reviews,stock:stock,emoji:emoji,specs:specs.split("|"),desc:desc};
+}
+// ALL products live in this one array | সব পণ্য এই একটি অ্যারেতে
+const products=[
+P(1,"Sony WH-1000XM5","Sony","headphones",42990,49990,4.8,1240,12,"🎧","30h battery|Noise cancelling|Bluetooth 5.2","Premium ANC headphones."),
+P(2,"JBL Tune 770NC","JBL","headphones",9500,11500,4.5,860,25,"🎧","70h battery|Adaptive ANC|Foldable","Bass-rich ANC headphones."),
+P(3,"Anker Soundcore Q30","Anker","headphones",7500,9000,4.6,1520,18,"🎧","40h battery|Hybrid ANC|Hi-Res audio","Great value ANC headphones."),
+P(4,"Edifier W820NB","Edifier","headphones",8500,9900,4.4,430,9,"🎧","49h battery|ANC|LDAC codec","Hi-Res wireless headphones."),
+P(5,"boAt Rockerz 255","boAt","earbuds",1800,2500,4.2,2100,40,"🎵","Neckband|40h playback|IPX5","Popular budget neckband."),
+P(6,"OnePlus Bullets Wireless Z2","OnePlus","earbuds",2500,3200,4.4,980,30,"🎵","Neckband|30h playback|Fast charge","Neckband with deep bass."),
+P(7,"Apple AirPods Pro","Apple","earbuds",27500,31000,4.8,1900,10,"🎵","Noise cancelling|MagSafe case|Spatial audio","Apple true wireless earbuds."),
+P(8,"Samsung Galaxy Buds2","Samsung","earbuds",8900,12000,4.3,670,0,"🎵","ANC|5h battery|Wireless charging","Compact true wireless buds."),
+P(9,"Xiaomi Redmi Buds 5","Xiaomi","earbuds",3500,4200,4.3,1100,35,"🎵","46dB ANC|10h battery|Bluetooth 5.3","Affordable ANC earbuds."),
+P(10,"QCY T13","QCY","earbuds",1900,2400,4.1,1750,50,"🎵","30h with case|Bluetooth 5.1|Low latency","Budget true wireless earbuds."),
+P(11,"Samsung Galaxy A55","Samsung","mobiles",52000,58000,4.6,740,14,"📱","8GB RAM|128GB|50MP camera|5000mAh","5G phone with AMOLED screen."),
+P(12,"Xiaomi Redmi Note 13","Xiaomi","mobiles",24500,27000,4.5,1320,22,"📱","8GB RAM|128GB|108MP camera|5000mAh","Best value AMOLED phone."),
+P(13,"realme C67","realme","mobiles",19500,22000,4.2,610,17,"📱","6GB RAM|128GB|108MP camera|5000mAh","Stylish budget phone."),
+P(14,"iPhone 15","Apple","mobiles",105000,115000,4.9,880,6,"📱","6GB RAM|128GB|48MP camera|A16 chip","Apple flagship with USB-C."),
+P(15,"Infinix Hot 40","Infinix","mobiles",15500,17500,4.1,950,28,"📱","8GB RAM|256GB|90Hz display|5000mAh","Big storage budget phone."),
+P(16,"HP 15","HP","laptops",52000,58000,4.3,310,11,"💻","Core i3|8GB RAM|256GB SSD|15.6 inch","Everyday student laptop."),
+P(17,"Lenovo IdeaPad Slim 3","Lenovo","laptops",58000,64000,4.4,420,8,"💻","Core i5|8GB RAM|512GB SSD|15.6 inch","Slim laptop for study."),
+P(18,"ASUS VivoBook 15","ASUS","laptops",62000,69000,4.5,380,10,"💻","Core i5|16GB RAM|512GB SSD|FHD","Fast and light laptop."),
+P(19,"Acer Aspire 5","Acer","laptops",65000,72000,4.4,290,7,"💻","Core i5|16GB RAM|512GB SSD|FHD","Reliable performance laptop."),
+P(20,"MacBook Air M2","Apple","laptops",125000,139000,4.9,520,5,"💻","M2 chip|8GB RAM|256GB SSD|18h battery","Premium thin laptop."),
+P(21,"Apple Watch SE","Apple","watches",38000,42000,4.7,460,9,"⌚","Retina display|GPS|Heart rate|Water resistant","Apple smartwatch."),
+P(22,"Amazfit Bip 5","Amazfit","watches",8500,10500,4.3,540,20,"⌚","1.91 inch display|10-day battery|GPS","Long battery smartwatch."),
+P(23,"Xiaomi Smart Band 8","Xiaomi","watches",4200,5200,4.5,1650,45,"⌚","AMOLED|16-day battery|150+ sports modes","Popular fitness band."),
+P(24,"Samsung Galaxy Watch","Samsung","watches",22000,26000,4.4,350,13,"⌚","AMOLED|Sleep tracking|ECG","Smartwatch for Android."),
+P(25,"Anker PowerCore 10000","Anker","gadgets",2800,3500,4.6,1380,32,"🔋","10000mAh|Fast charging|Compact","Slim power bank."),
+P(26,"Baseus 20000mAh Power Bank","Baseus","gadgets",3600,4500,4.5,890,26,"🔋","20000mAh|22.5W|Dual output","High capacity power bank."),
+P(27,"JBL Go 3","JBL","gadgets",3800,4800,4.7,1420,24,"🔊","IP67|5h playtime|Bluetooth 5.1","Pocket Bluetooth speaker."),
+P(28,"Xiaomi Bluetooth Speaker","Xiaomi","gadgets",2600,3200,4.3,610,19,"🔊","16W|IPX7|13h playtime","Portable speaker."),
+P(29,"Logitech M331 Silent Mouse","Logitech","gadgets",1600,1900,4.5,720,38,"🖱️","Silent click|Wireless 2.4GHz|18-month battery","Quiet wireless mouse."),
+P(30,"Logitech C920 Webcam","Logitech","gadgets",6500,7800,4.6,410,15,"📷","1080p|Dual mic|Light correction","HD webcam for classes.")
+];
+const categories={headphones:"🎧",earbuds:"🎵",mobiles:"📱",laptops:"💻",watches:"⌚",gadgets:"🔌"};
+const coupons={TECH10:10,STUDENT5:5};
+const divisions=["Dhaka","Chattogram","Rajshahi","Khulna","Barishal","Sylhet","Rangpur","Mymensingh"];
+const slides=[
+  {title:"Mega Electronics Sale",sub:"Up to 30% off on laptops and phones",color:"from-indigo-600 to-purple-600"},
+  {title:"Sound That Moves You",sub:"Top headphones and earbuds",color:"from-pink-500 to-orange-500"},
+  {title:"Free Delivery over ৳5,000",sub:"Genuine products, 7-day return",color:"from-emerald-500 to-teal-600"}
+];
+// Labels in two languages | দুই ভাষার লেখা
+const words={
+  en:{shop:"Shop",orders:"Orders",search:"Search products...",add:"Add to Cart",buy:"Buy Now",cart:"Cart",flash:"Flash Sale",best:"Best Sellers",cats:"Categories",total:"Total",checkout:"Checkout",place:"Place Order",empty:"Your cart is empty"},
+  bn:{shop:"শপ",orders:"অর্ডার",search:"পণ্য খুঁজুন...",add:"কার্টে যোগ করুন",buy:"এখনই কিনুন",cart:"কার্ট",flash:"ফ্ল্যাশ সেল",best:"বেস্ট সেলার",cats:"ক্যাটাগরি",total:"মোট",checkout:"চেকআউট",place:"অর্ডার করুন",empty:"আপনার কার্ট খালি"}
+};
+
+// ================= STATE (অবস্থা) =================
+// Rule: change the data, then call render() | নিয়ম: ডেটা বদলাও, তারপর render()
+const state={
+  page:"home",category:"all",maxPrice:150000,inStockOnly:false,sort:"popular",search:"",
+  selectedId:null,slide:0,invoiceId:null,lastOrderId:null,coupon:"",
+  cart:load("cart",[]),wishlist:load("wishlist",[]),orders:load("orders",[]),
+  userEmail:load("userEmail",""),dark:load("dark",false),lang:load("lang","en")
+};
+
+// ================= HELPERS (সাহায্যকারী) =================
+// Reads saved data from localStorage | localStorage থেকে ডেটা পড়ে
+function load(key,fallback){
+  try{ const saved=localStorage.getItem("tb_"+key); return saved?JSON.parse(saved):fallback; }
+  catch(e){ return fallback; }
+}
+// Saves data to localStorage | localStorage-এ ডেটা রাখে
+function save(key,value){
+  try{ localStorage.setItem("tb_"+key,JSON.stringify(value)); }catch(e){}
+}
+// Saves everything that must survive a refresh | রিফ্রেশের পরেও যা থাকবে সব সংরক্ষণ
+function saveAll(){
+  save("cart",state.cart); save("wishlist",state.wishlist); save("orders",state.orders);
+  save("userEmail",state.userEmail); save("dark",state.dark); save("lang",state.lang);
+}
+// Shows a number as Taka | সংখ্যাকে টাকায় দেখায়
+function money(n){ return "৳"+Math.round(n).toLocaleString("en-IN"); }
+// Text in the current language | বর্তমান ভাষার লেখা
+function t(key){ return words[state.lang][key]||key; }
+// Finds a product by id | আইডি দিয়ে পণ্য খোঁজে
+function getProduct(id){ return products.find(function(p){ return p.id===id; }); }
+// Discount percent from old and new price | ছাড়ের শতাংশ হিসাব
+function discountPercent(p){ return Math.round((p.old-p.price)/p.old*100); }
+// Rating as stars | রেটিং তারা হিসেবে
+function stars(r){ const full=Math.round(r); return "★".repeat(full)+"☆".repeat(5-full); }
+// Reads one trimmed input value | ইনপুটের মান পড়ে
+function val(id){ return document.getElementById(id).value.trim(); }
+// Adds a leading zero | সংখ্যার আগে ০ বসায়
+function pad(n){ return n<10?"0"+n:""+n; }
+// Small popup message | ছোট বার্তা দেখায়
+function toast(msg){
+  const el=document.getElementById("toast");
+  el.textContent=msg; el.style.opacity=1;
+  setTimeout(function(){ el.style.opacity=0; },2000);
+}
+// Cart maths: subtotal, coupon, delivery, 5% VAT, total | কার্টের সব হিসাব
+function calculateTotal(){
+  let subtotal=0;
+  state.cart.forEach(function(item){ subtotal+=getProduct(item.id).price*item.qty; });
+  const percent=coupons[state.coupon]||0;
+  const discount=subtotal*percent/100;
+  const taxable=subtotal-discount;
+  const delivery=(subtotal===0||subtotal>=5000)?0:100;
+  const vat=taxable*0.05;
+  return {subtotal:subtotal,discount:discount,delivery:delivery,vat:vat,total:taxable+vat+delivery};
+}
+// Filters and sorts products for the shop page | শপ পেজের জন্য ফিল্টার ও সাজানো
+function getVisibleProducts(){
+  const q=state.search.toLowerCase();
+  const list=products.filter(function(p){
+    const okCategory=state.category==="all"||p.category===state.category;
+    const okPrice=p.price<=state.maxPrice;
+    const okStock=!state.inStockOnly||p.stock>0;
+    const okSearch=q===""||(p.name+" "+p.brand).toLowerCase().includes(q);
+    return okCategory&&okPrice&&okStock&&okSearch;
+  });
+  if(state.sort==="low") list.sort(function(a,b){ return a.price-b.price; });
+  if(state.sort==="high") list.sort(function(a,b){ return b.price-a.price; });
+  if(state.sort==="rating") list.sort(function(a,b){ return b.rating-a.rating; });
+  if(state.sort==="popular") list.sort(function(a,b){ return b.reviews-a.reviews; });
+  return list;
+}
+
+// ================= RENDER FUNCTIONS (দেখানোর ফাংশন) =================
+// Realistic product photography by product category | ক্যাটাগরি অনুযায়ী বাস্তবধর্মী পণ্যের ছবি
+function productImage(p,big){
+  const size=big?"h-72":"h-36";
+  const images={
+    headphones:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
+    earbuds:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=900&q=85",
+    mobiles:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=85",
+    laptops:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85",
+    watches:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",
+    gadgets:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85"
+  };
+  const fallback='<div class="'+size+' rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500"><svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="m21 15-5-5L5 19"/></svg></div>';
+  return '<div class="'+size+' rounded-xl bg-white dark:bg-slate-700 overflow-hidden flex items-center justify-center">'+
+    '<img src="'+images[p.category]+'" alt="'+p.name+'" class="w-full h-full object-contain" loading="lazy" onerror="this.onerror=null;this.style.display=String.fromCharCode(110,111,110,101);this.nextElementSibling.style.display=String.fromCharCode(102,108,101,120)">'+
+    '<div style="display:none" class="w-full h-full">'+fallback+'</div></div>';
+}
+// Grid of product cards | পণ্য কার্ডের গ্রিড
+function grid(list){
+  return '<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">'+list.map(function(p){ return renderCard(p); }).join("")+'</div>';
+}
+// One product card with badges | ব্যাজসহ একটি পণ্য কার্ড
+function renderCard(p){
+  const out=p.stock===0;
+  const first=out?'<span class="tag bg-slate-600">Out of stock</span>':'<span class="tag bg-red-500">-'+discountPercent(p)+'%</span>';
+  const hot=p.reviews>1500?'<span class="tag bg-orange-500">HOT</span>':'';
+  const heart=state.wishlist.includes(p.id)?"♥":"♡";
+  return '<div class="box card relative">'+
+    '<div class="relative cursor-pointer" onclick="openProduct('+p.id+')">'+productImage(p,false)+'<div class="absolute top-2 left-2 flex gap-1">'+first+hot+'</div></div>'+
+    '<button onclick="toggleWishlist('+p.id+')" class="absolute top-4 right-4">'+heart+'</button>'+
+    '<h3 class="font-semibold mt-2 text-sm cursor-pointer" onclick="openProduct('+p.id+')">'+p.name+'</h3>'+
+    '<div class="text-amber-500 text-sm">'+stars(p.rating)+' <span class="text-slate-400">('+p.reviews+')</span></div>'+
+    '<div class="font-bold text-indigo-600 dark:text-indigo-300">'+money(p.price)+' <s class="text-xs text-slate-400">'+money(p.old)+'</s></div>'+
+    '<button class="btn w-full mt-2" '+(out?"disabled":"")+' onclick="addToCart('+p.id+',1)">'+t("add")+'</button></div>';
+}
+// Home page: banner, trust badges, categories, flash sale, best sellers | হোম পেজ
+function renderHome(){
+  const catImages={headphones:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=240&q=80",earbuds:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=240&q=80",mobiles:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=240&q=80",laptops:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=240&q=80",watches:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=240&q=80",gadgets:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=240&q=80"};
+  const catHtml=Object.keys(categories).map(function(c){
+    return '<button onclick="setCategory(\''+c+'\')" class="box card text-center"><img src="'+catImages[c]+'" alt="'+c+'" loading="lazy" class="w-full h-16 object-contain rounded-lg" onerror="this.style.display=\'none\'"><div class="text-sm capitalize mt-2">'+c+'</div></button>';
+  }).join("");
+  const flash=products.filter(function(p){ return discountPercent(p)>=15&&p.stock>0; }).slice(0,4);
+  const best=products.slice().sort(function(a,b){ return b.reviews-a.reviews; }).slice(0,4);
+  const trust=["✓ Genuine Products","Free Delivery over ৳5,000","↩ 7-Day Return","Secure Payment"].map(function(b){
+    return '<div class="box text-center text-sm font-semibold">'+b+'</div>';
+  }).join("");
+  return '<div id="banner"></div>'+
+    '<div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-4">'+trust+'</div>'+
+    '<h2 class="text-xl font-bold my-3 gradient-heading">'+t("cats")+'</h2><div class="grid grid-cols-3 md:grid-cols-6 gap-3">'+catHtml+'</div>'+
+    '<h2 class="text-xl font-bold mt-6 mb-3 gradient-heading">'+t("flash")+' <span id="timer" class="ml-2 text-sm bg-red-500 text-white rounded px-2 py-1"></span></h2>'+grid(flash)+
+    '<h2 class="text-xl font-bold mt-6 mb-3 gradient-heading">'+t("best")+'</h2>'+grid(best);
+}
+// Shows the current banner slide with automatic rotation and touch/mouse swiping.
+let bannerAutoplay=null;
+function stopBannerAutoplay(){if(bannerAutoplay!==null){clearInterval(bannerAutoplay);bannerAutoplay=null;}}
+function startBannerAutoplay(){
+  stopBannerAutoplay();
+  if(document.getElementById("banner")) bannerAutoplay=setInterval(function(){nextBanner();},5500);
+}
+function showBanner(){
+  const box=document.getElementById("banner");
+  if(!box) return;
+  const s=slides[state.slide];
+  const bannerImages=[
+    "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1600&q=85",
+    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1600&q=85",
+    "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=85"
+  ];
+  box.className="rounded-2xl text-white banner-enter";
+  box.style.backgroundImage="url('"+bannerImages[state.slide]+"')";
+  box.setAttribute("role","region");
+  box.setAttribute("aria-label","Featured offers. Swipe left or right to change slides.");
+  box.innerHTML='<div class="banner-shade rounded-2xl"></div><div class="banner-content p-8 md:p-14"><span class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs md:text-sm font-semibold tracking-wide text-white backdrop-blur-sm"><span class="inline-block h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,.9)]"></span>TECHBAZAR BD · FEATURED OFFER</span><h1 class="banner-title text-3xl md:text-5xl font-extrabold gradient-heading mt-4">'+s.title+'</h1><p class="mt-3 max-w-xl text-sm md:text-lg leading-relaxed text-white/90">'+s.sub+'</p><button onclick="go(\'shop\')" class="mt-6 bg-white text-indigo-700 font-bold rounded-xl px-5 py-3 shadow-lg">'+t("shop")+' <span aria-hidden="true">→</span></button><p class="mt-4 text-xs text-white/75">Swipe or drag to explore · Changes automatically</p></div><div class="banner-progress"><span></span></div>';
+  if(!box.dataset.swipeBound){
+    let startX=0,startY=0,pointerX=null;
+    function moveSlide(direction){state.slide=(state.slide+(direction>0?1:slides.length-1))%slides.length;showBanner();}
+    box.addEventListener("touchstart",function(e){if(!e.touches||!e.touches[0])return;startX=e.touches[0].clientX;startY=e.touches[0].clientY;stopBannerAutoplay();},{passive:true});
+    box.addEventListener("touchend",function(e){if(!e.changedTouches||!e.changedTouches[0]){startBannerAutoplay();return;}const dx=e.changedTouches[0].clientX-startX;const dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))moveSlide(dx<0?1:-1);else startBannerAutoplay();},{passive:true});
+    box.addEventListener("pointerdown",function(e){if(e.pointerType==="mouse"){pointerX=e.clientX;stopBannerAutoplay();}});
+    box.addEventListener("pointerup",function(e){if(pointerX===null)return;const dx=e.clientX-pointerX;pointerX=null;if(Math.abs(dx)>65)moveSlide(dx<0?1:-1);else startBannerAutoplay();});
+    box.addEventListener("pointercancel",function(){pointerX=null;startBannerAutoplay();});
+    box.addEventListener("mouseenter",stopBannerAutoplay);
+    box.addEventListener("mouseleave",startBannerAutoplay);
+    box.dataset.swipeBound="1";
+  }
+  startBannerAutoplay();
+}
+// Shows time left today for the flash sale | ফ্ল্যাশ সেলের বাকি সময়
+function updateTimer(){
+  const el=document.getElementById("timer");
+  if(!el) return;
+  const end=new Date();
+  end.setHours(23,59,59,999);
+  const sec=Math.floor((end-new Date())/1000);
+  el.textContent=pad(Math.floor(sec/3600))+":"+pad(Math.floor(sec%3600/60))+":"+pad(sec%60);
+}
+// Shop page: filters on the left, products on the right | শপ পেজ
+function renderShop(){
+  const list=getVisibleProducts();
+  const catOptions='<option value="all">All</option>'+Object.keys(categories).map(function(c){
+    return '<option value="'+c+'"'+(c===state.category?" selected":"")+'>'+c+'</option>';
+  }).join("");
+  const sorts=[["popular","Popularity"],["low","Price: Low to High"],["high","Price: High to Low"],["rating","Rating"]];
+  const sortOptions=sorts.map(function(s){
+    return '<option value="'+s[0]+'"'+(s[0]===state.sort?" selected":"")+'>'+s[1]+'</option>';
+  }).join("");
+  return '<div class="grid md:grid-cols-4 gap-4"><aside class="box h-fit space-y-3">'+
+    '<label class="block text-sm font-bold">Category<select class="inp mt-1" onchange="setCategory(this.value)">'+catOptions+'</select></label>'+
+    '<label class="block text-sm font-bold">Max price: '+money(state.maxPrice)+'<input type="range" min="1000" max="150000" step="1000" value="'+state.maxPrice+'" onchange="setPrice(this.value)" class="w-full"></label>'+
+    '<label class="block text-sm"><input type="checkbox" onchange="setStock(this.checked)" '+(state.inStockOnly?"checked":"")+'> In stock only</label>'+
+    '<label class="block text-sm font-bold">Sort by<select class="inp mt-1" onchange="setSort(this.value)">'+sortOptions+'</select></label></aside>'+
+    '<section class="md:col-span-3"><p class="mb-2 text-sm">'+list.length+' products</p>'+(list.length?grid(list):'<p>No products found.</p>')+'</section></div>';
+}
+// Product details page with related products | পণ্যের বিস্তারিত পেজ
+function renderProduct(){
+  const p=getProduct(state.selectedId);
+  const out=p.stock===0;
+  const rows=p.specs.map(function(s,i){
+    return '<tr class="border-b"><td class="py-1 pr-3 font-semibold">Spec '+(i+1)+'</td><td>'+s+'</td></tr>';
+  }).join("");
+  const related=products.filter(function(x){ return x.category===p.category&&x.id!==p.id; }).slice(0,4);
+  return '<button onclick="go(\'shop\')" class="mb-3 text-sm underline">← '+t("shop")+'</button>'+
+    '<div class="grid md:grid-cols-2 gap-6"><div class="relative">'+productImage(p,true)+(out?'':'<span class="tag bg-red-500 absolute top-3 left-3">-'+discountPercent(p)+'%</span>')+'</div>'+
+    '<div class="space-y-2"><div class="text-sm text-indigo-600">'+p.brand+'</div><h1 class="text-2xl font-bold">'+p.name+'</h1>'+
+    '<div class="text-amber-500">'+stars(p.rating)+' <span class="text-slate-500 text-sm">'+p.rating+' ('+p.reviews+' reviews)</span></div>'+
+    '<div class="text-3xl font-extrabold text-indigo-600">'+money(p.price)+' <s class="text-base text-slate-400">'+money(p.old)+'</s></div>'+
+    '<p>'+p.desc+'</p><table class="text-sm w-full">'+rows+'</table>'+
+    (out?'<p class="text-red-500 font-bold">Out of stock</p>':'<p class="text-green-600 text-sm">In stock: '+p.stock+'</p>')+
+    '<div class="flex flex-wrap items-center gap-2"><input id="qty" type="number" min="1" max="'+p.stock+'" value="1" class="inp !w-20">'+
+    '<button class="btn" '+(out?"disabled":"")+' onclick="addToCart('+p.id+',readQty())">'+t("add")+'</button>'+
+    '<button class="btn !bg-amber-500" '+(out?"disabled":"")+' onclick="buyNow('+p.id+')">'+t("buy")+'</button>'+
+    '<button class="btn !bg-pink-500" onclick="toggleWishlist('+p.id+')">'+(state.wishlist.includes(p.id)?"❤️":"🤍")+' Wishlist</button></div></div></div>'+
+    '<h2 class="text-xl font-bold mt-8 mb-3">Related products</h2>'+grid(related);
+}
+// One line of the order summary | সামারির একটি লাইন
+function row(label,value){ return '<div class="flex justify-between"><span>'+label+'</span><span>'+value+'</span></div>'; }
+// Live order summary box | লাইভ অর্ডার সামারি
+function summaryBox(isCart){
+  const c=calculateTotal();
+  return '<div class="box h-fit space-y-1 text-sm"><h2 class="font-bold text-lg">Order Summary</h2>'+
+    (isCart?'<div class="flex gap-2"><input id="couponBox" class="inp" placeholder="TECH10 / STUDENT5" value="'+state.coupon+'"><button class="btn" onclick="applyCoupon()">Apply</button></div>':'')+
+    row("Subtotal",money(c.subtotal))+row("Discount","-"+money(c.discount))+row("Delivery",c.delivery?money(c.delivery):"FREE")+row("VAT (5%)",money(c.vat))+
+    '<div class="flex justify-between font-extrabold text-lg border-t pt-2"><span>'+t("total")+'</span><span>'+money(c.total)+'</span></div>'+
+    (isCart?'<button class="btn w-full mt-2" onclick="go(\'checkout\')">'+t("checkout")+'</button>':'')+'</div>';
+}
+// Cart page | কার্ট পেজ
+function renderCart(){
+  if(state.cart.length===0){
+    return '<div class="box text-center py-10"><p class="text-xl">'+t("empty")+'</p><button class="btn mt-4" onclick="go(\'shop\')">'+t("shop")+'</button></div>';
+  }
+  const rows=state.cart.map(function(item){
+    const p=getProduct(item.id);
+    return '<div class="box flex items-center gap-3 mb-2"><div class="w-16 h-16 shrink-0">'+productImage(p,false)+'</div>'+
+      '<div class="flex-1"><div class="font-semibold text-sm">'+p.name+'</div><div class="text-indigo-600">'+money(p.price)+'</div></div>'+
+      '<button class="btn" onclick="changeQty('+p.id+',-1)">−</button><b>'+item.qty+'</b><button class="btn" onclick="changeQty('+p.id+',1)">+</button>'+
+      '<button aria-label="Remove item" onclick="removeItem('+p.id+')">Remove</button></div>';
+  }).join("");
+  return '<h1 class="text-2xl font-bold mb-3">'+t("cart")+'</h1><div class="grid md:grid-cols-3 gap-4"><div class="md:col-span-2">'+rows+'</div>'+summaryBox(true)+'</div>';
+}
+// Checkout page with form | চেকআউট পেজ ও ফর্ম
+function renderCheckout(){
+  if(state.cart.length===0) return renderCart();
+  const divOptions=divisions.map(function(d){ return '<option>'+d+'</option>'; }).join("");
+  const pays=["bKash","Nagad","Card","Cash on Delivery"].map(function(m,i){
+    return '<label class="block"><input type="radio" name="pay" value="'+m+'" '+(i===3?"checked":"")+'> '+m+'</label>';
+  }).join("");
+  return '<h1 class="text-2xl font-bold mb-3">'+t("checkout")+'</h1><div class="grid md:grid-cols-3 gap-4"><div class="box md:col-span-2 space-y-2">'+
+    '<input id="fName" class="inp" placeholder="Full name">'+
+    '<input id="fPhone" class="inp" placeholder="Phone (01XXXXXXXXX)" maxlength="11">'+
+    '<select id="fDiv" class="inp">'+divOptions+'</select>'+
+    '<input id="fDist" class="inp" placeholder="District">'+
+    '<textarea id="fAddr" class="inp" placeholder="Full address"></textarea>'+pays+
+    '<button class="btn w-full" onclick="placeOrder()">'+t("place")+'</button></div>'+summaryBox(false)+'</div>';
+}
+// List of orders with a 4-step tracker | ৪ ধাপের ট্র্যাকারসহ অর্ডার তালিকা
+function renderOrders(){
+  if(state.orders.length===0) return '<div class="box text-center">No orders yet.</div>';
+  return state.orders.map(function(o){
+    const steps=["Placed","Packed","Shipped","Delivered"].map(function(s,i){
+      return '<span class="flex-1 text-center text-xs p-1 rounded '+(i<=o.status?"bg-green-500 text-white":"bg-slate-200 text-slate-600")+'">'+s+'</span>';
+    }).join("");
+    return '<div class="box mb-3"><div class="flex justify-between flex-wrap"><b>#'+o.id+'</b><span class="text-sm">'+o.date+'</span></div>'+
+      '<div class="text-sm">'+o.items.length+' item(s), '+money(o.totals.total)+', '+o.pay+'</div><div class="flex gap-1 my-2">'+steps+'</div>'+
+      '<button class="btn" onclick="showInvoice(\''+o.id+'\')">Invoice</button> <button class="btn !bg-slate-500" onclick="advanceStatus(\''+o.id+'\')">Next status (demo)</button></div>';
+  }).join("");
+}
+// Order success page | অর্ডার সফল পেজ
+function renderSuccess(){
+  return '<div class="box text-center mb-4"><div class="mx-auto text-4xl text-green-600">✓</div><h1 class="text-2xl font-bold">Order placed!</h1><p>Order ID: <b>'+state.lastOrderId+'</b></p></div>'+renderOrders();
+}
+// Printable invoice with journal entry and Debit = Credit check | ইনভয়েস, জার্নাল এন্ট্রি ও ডেবিট = ক্রেডিট যাচাই
+function renderInvoice(){
+  const o=state.orders.find(function(x){ return x.id===state.invoiceId; });
+  if(!o) return renderOrders();
+  const c=o.totals;
+  const rows=o.items.map(function(i){
+    return '<tr class="border-b"><td>'+i.name+'</td><td>'+i.qty+'</td><td class="text-right">'+money(i.price*i.qty)+'</td></tr>';
+  }).join("");
+  const debitName=o.pay==="Cash on Delivery"?"Accounts Receivable":"Cash / Bank";
+  const revenue=c.subtotal-c.discount+c.delivery;
+  const debitTotal=c.total;
+  const creditTotal=revenue+c.vat;
+  const balanced=Math.abs(debitTotal-creditTotal)<0.01;
+  return '<div class="box"><h1 class="text-2xl font-bold">TechBazar BD Invoice #'+o.id+'</h1>'+
+    '<p class="text-sm">'+o.date+', '+o.name+', '+o.phone+'<br>'+o.address+', '+o.division+'</p>'+
+    '<table class="w-full text-sm my-3"><tr class="border-b font-bold"><td>Item</td><td>Qty</td><td class="text-right">Amount</td></tr>'+rows+'</table>'+
+    '<div class="text-sm">'+row("Subtotal",money(c.subtotal))+row("Discount","-"+money(c.discount))+row("Delivery",money(c.delivery))+row("VAT (5%)",money(c.vat))+row("<b>Total</b>","<b>"+money(c.total)+"</b>")+'</div>'+
+    '<h2 class="font-bold mt-4">Journal Entry</h2>'+
+    '<table class="w-full text-sm"><tr class="font-bold border-b"><td>Account</td><td class="text-right">Debit</td><td class="text-right">Credit</td></tr>'+
+    '<tr><td>'+debitName+' A/c Dr.</td><td class="text-right">'+money(debitTotal)+'</td><td></td></tr>'+
+    '<tr><td class="pl-6">To Sales Revenue A/c</td><td></td><td class="text-right">'+money(revenue)+'</td></tr>'+
+    '<tr><td class="pl-6">To VAT Payable A/c</td><td></td><td class="text-right">'+money(c.vat)+'</td></tr>'+
+    '<tr class="font-bold border-t"><td>Total</td><td class="text-right">'+money(debitTotal)+'</td><td class="text-right">'+money(creditTotal)+'</td></tr></table>'+
+    '<p class="mt-2 font-bold '+(balanced?"text-green-600":"text-red-600")+'">'+(balanced?"✔ Debit = Credit (balanced)":"✘ Not balanced")+'</p>'+
+    '<button class="btn mt-3 noprint" onclick="window.print()">🖨️ Print</button></div>';
+}
+// Login/account page. Front-end demo only; real password verification needs a backend.
+function renderLogin(){
+  if(state.userEmail){
+    return '<section class="login-shell p-5 md:p-10"><div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 items-center"><div class="text-white py-4"><div class="inline-flex items-center gap-3 mb-5"><svg viewBox="0 0 48 48" width="54" height="54"><defs><linearGradient id="accountLogoGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#f472b6"/></linearGradient></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="#fff" fill-opacity=".15"/><path d="M26 6 12 26h10l-2 16 16-23H25z" fill="url(#accountLogoGradient)" stroke="#fff" stroke-width="1.1"/></svg><div><div class="text-2xl font-black">Welcome back!</div><div class="text-white/70 text-sm">Your TechBazar account</div></div></div><p class="text-white/80">Manage your shopping journey in one place.</p></div><div class="login-panel text-slate-800 dark:text-slate-100 rounded-2xl p-6 md:p-8 shadow-2xl"><div class="text-sm text-slate-500 dark:text-slate-400">SIGNED IN AS</div><h1 class="text-xl font-extrabold mt-1 break-all">'+escapeHtml(state.userEmail)+'</h1><p class="text-sm mt-3 text-slate-500 dark:text-slate-400">This demo remembers your email on this browser.</p><button class="btn w-full mt-6" onclick="go(&#39;orders&#39;)">View my orders</button><button class="w-full mt-3 rounded-xl border border-slate-300 dark:border-slate-600 px-4 py-2.5 font-semibold" onclick="logoutDemo()">Sign out</button></div></div></section>';
+  }
+  return '<section class="login-shell p-4 md:p-10"><div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-7 md:gap-12 items-center"><div class="text-white py-5 md:py-10"><div class="inline-flex items-center gap-3 mb-6"><svg viewBox="0 0 48 48" width="58" height="58"><defs><linearGradient id="loginLogoGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#f472b6"/></linearGradient></defs><rect x="2" y="2" width="44" height="44" rx="14" fill="#fff" fill-opacity=".15" stroke="#fff" stroke-opacity=".3"/><path d="M26 6 12 26h10l-2 16 16-23H25z" fill="url(#loginLogoGradient)" stroke="#fff" stroke-width="1.1"/></svg><div><div class="text-2xl sm:text-3xl font-black tracking-tight">TechBazar <span class="gradient-heading">BD</span></div><div class="text-xs uppercase tracking-[.22em] text-white/65 mt-1">Power your everyday</div></div></div><h1 class="text-3xl md:text-4xl font-black leading-tight">Your next favourite tech is <span class="gradient-heading">waiting.</span></h1><p class="mt-4 text-white/80 max-w-md">Sign in to keep your shopping details close and explore the latest electronics.</p><div class="mt-6 flex flex-wrap gap-2"><span class="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm">Genuine products</span><span class="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm">Easy shopping</span><span class="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm">Order tracking</span></div></div><div class="login-panel rounded-2xl p-6 md:p-8 shadow-2xl"><h2 class="text-2xl font-extrabold">Welcome back</h2><p class="text-sm text-slate-500 dark:text-slate-400 mt-1 mb-6">Enter your email to start the demo session.</p><form onsubmit="event.preventDefault();submitLogin()"><label for="loginEmail" class="block text-sm font-semibold mb-1">Email address</label><input id="loginEmail" type="email" autocomplete="email" required class="inp mb-4" placeholder="you@example.com"><label for="loginPassword" class="block text-sm font-semibold mb-1">Password</label><input id="loginPassword" type="password" autocomplete="current-password" minlength="4" required class="inp" placeholder="At least 4 characters"><p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Demo only: no password is stored or verified.</p><button type="submit" class="btn w-full mt-5 py-3 font-bold">Sign in <span aria-hidden="true">→</span></button></form><div class="text-center text-sm text-slate-500 dark:text-slate-400 mt-5">New here? <button onclick="demoRegister()" class="font-bold text-indigo-600 dark:text-indigo-300 underline">Create a demo account</button></div><button onclick="go(&#39;home&#39;)" class="w-full mt-4 text-sm font-semibold text-slate-500 hover:text-indigo-600">← Back to store</button></div></div></section>';
+}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(ch){return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"})[ch];});}
+function submitLogin(){
+  const email=document.getElementById("loginEmail");
+  const password=document.getElementById("loginPassword");
+  if(!email||!password||!email.checkValidity()||password.value.length<4){toast("Enter a valid email and a password of at least 4 characters");return;}
+  state.userEmail=email.value.trim();
+  toast("Demo sign-in successful");
+  render();window.scrollTo(0,0);
+}
+function demoRegister(){toast("Demo account: enter your email and a password to continue");const email=document.getElementById("loginEmail");if(email)email.focus();}
+function logoutDemo(){state.userEmail="";toast("You have signed out");render();window.scrollTo(0,0);}
+
+// MAIN render: draws the current page from state | মূল render: state অনুযায়ী পেজ আঁকে
+function render(){
+  document.documentElement.classList.toggle("dark",state.dark);
+  document.getElementById("navShop").textContent=t("shop");
+  document.getElementById("navOrders").textContent=t("orders");
+  document.getElementById("navLogin").textContent=state.userEmail?"My account":"Log in";
+  document.getElementById("searchBox").placeholder=t("search");
+  document.getElementById("cartCount").textContent=state.cart.reduce(function(sum,i){ return sum+i.qty; },0);
+  const pages={home:renderHome,shop:renderShop,product:renderProduct,cart:renderCart,checkout:renderCheckout,success:renderSuccess,orders:renderOrders,invoice:renderInvoice,login:renderLogin};
+  document.getElementById("app").innerHTML=pages[state.page]();
+  showBanner();
+  updateTimer();
+  saveAll();
+}
+
+// ================= EVENT ACTIONS (ইভেন্ট অ্যাকশন) =================
+// Goes to a page | পেজ বদলায়
+function go(page){ state.page=page; render(); window.scrollTo(0,0); }
+// Opens one product | একটি পণ্য খোলে
+function openProduct(id){ state.selectedId=id; go("product"); }
+// Picks a category and opens the shop | ক্যাটাগরি বাছে
+function setCategory(c){ state.category=c; go("shop"); }
+// Sets max price filter | সর্বোচ্চ দাম ফিল্টার
+function setPrice(v){ state.maxPrice=Number(v); render(); }
+// Sets in-stock filter | স্টকে আছে ফিল্টার
+function setStock(v){ state.inStockOnly=v; render(); }
+// Sets sort order | সাজানোর নিয়ম
+function setSort(v){ state.sort=v; render(); }
+// Live search from the header box | হেডার সার্চ
+function onSearch(v){ state.search=v; if(state.page!=="shop"){ go("shop"); } else { render(); } }
+// Reads the quantity box on the product page | পরিমাণ বক্স পড়ে
+function readQty(){ const n=parseInt(document.getElementById("qty").value); return n>0?n:1; }
+// Adds a product to the cart (never above stock) | কার্টে পণ্য যোগ করে
+function addToCart(id,qty){
+  const p=getProduct(id);
+  if(p.stock===0){ toast("Out of stock"); return; }
+  const item=state.cart.find(function(i){ return i.id===id; });
+  if(item){ item.qty=Math.min(item.qty+qty,p.stock); }
+  else { state.cart.push({id:id,qty:Math.min(qty,p.stock)}); }
+  toast("🛒 "+p.name+" added");
+  render();
+}
+// Adds to cart and goes straight to checkout | কার্টে যোগ করে সরাসরি চেকআউটে
+function buyNow(id){ addToCart(id,readQty()); go("checkout"); }
+// Changes quantity by +1 or -1 | পরিমাণ বাড়ায়/কমায়
+function changeQty(id,delta){
+  const item=state.cart.find(function(i){ return i.id===id; });
+  item.qty=item.qty+delta;
+  if(item.qty<1) item.qty=1;
+  if(item.qty>getProduct(id).stock) item.qty=getProduct(id).stock;
+  render();
+}
+// Removes a product from the cart | কার্ট থেকে সরায়
+function removeItem(id){
+  state.cart=state.cart.filter(function(i){ return i.id!==id; });
+  toast("Item removed");
+  render();
+}
+// Checks and applies a coupon code | কুপন যাচাই ও প্রয়োগ
+function applyCoupon(){
+  const code=val("couponBox").toUpperCase();
+  if(coupons[code]){ state.coupon=code; toast("Coupon applied: "+coupons[code]+"% off"); }
+  else { state.coupon=""; toast("Invalid coupon"); }
+  render();
+}
+// Adds or removes a wishlist heart | উইশলিস্টে যোগ/বাদ
+function toggleWishlist(id){
+  if(state.wishlist.includes(id)){
+    state.wishlist=state.wishlist.filter(function(w){ return w!==id; });
+    toast("Removed from wishlist");
+  } else {
+    state.wishlist.push(id);
+    toast("❤️ Added to wishlist");
+  }
+  render();
+}
+// Validates the form, saves the order, empties the cart | ফর্ম যাচাই করে অর্ডার সেভ করে
+function placeOrder(){
+  const name=val("fName"), phone=val("fPhone"), address=val("fAddr");
+  if(name.length<3){ toast("Enter your full name"); return; }
+  if(!/^01[3-9][0-9]{8}$/.test(phone)){ toast("Phone must look like 01XXXXXXXXX"); return; }
+  if(address.length<6){ toast("Enter your full address"); return; }
+  const items=state.cart.map(function(i){
+    const p=getProduct(i.id);
+    return {name:p.name,price:p.price,qty:i.qty};
+  });
+  const district=val("fDist");
+  const order={
+    id:"TB"+String(Date.now()).slice(-8), date:new Date().toLocaleString(),
+    name:name, phone:phone, address:address,
+    division:val("fDiv")+(district?", "+district:""),
+    pay:document.querySelector('input[name="pay"]:checked').value,
+    items:items, totals:calculateTotal(), status:0
+  };
+  state.orders.unshift(order);
+  state.lastOrderId=order.id;
+  state.cart=[];
+  state.coupon="";
+  toast("✅ Order placed!");
+  go("success");
+}
+// Moves an order to the next tracker step (demo, no backend) | অর্ডার পরের ধাপে নেয়
+function advanceStatus(id){
+  const o=state.orders.find(function(x){ return x.id===id; });
+  if(o.status<3){ o.status=o.status+1; toast("Status updated"); }
+  render();
+}
+// Opens the invoice of one order | ইনভয়েস খোলে
+function showInvoice(id){ state.invoiceId=id; go("invoice"); }
+// Dark mode on/off | ডার্ক মোড অন/অফ
+function toggleDark(){ state.dark=!state.dark; render(); }
+// English / Bangla switch | ইংরেজি / বাংলা পরিবর্তন
+function toggleLang(){ state.lang=state.lang==="en"?"bn":"en"; toast(state.lang==="en"?"English":"বাংলা"); render(); }
+// Moves the banner to the next slide | পরের স্লাইড
+function nextBanner(){ if(!document.getElementById("banner")) return; state.slide=(state.slide+1)%slides.length; showBanner(); }
+
+// ================= STARTUP (শুরু) =================
+render();
+setInterval(updateTimer,1000);
+</script>
+</body>
+</html>
+
